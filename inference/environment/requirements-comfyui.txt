@@ -1,0 +1,17 @@
+# Direct dependency pins for this release. See README.md for validation scope.
+torch==2.10.0
+torchvision==0.25.0
+torchaudio==2.10.0
+numpy==2.4.4
+transformers==5.8.1
+tokenizers==0.22.2
+Pillow==12.2.0
+einops==0.8.2
+sentencepiece==0.2.1
+safetensors==0.7.0
+tqdm==4.67.3
+comfyui-frontend-package==1.43.18
+comfyui-workflow-templates==0.9.73
+comfyui-embedded-docs==0.5.0
+comfy-kitchen==0.2.8
+comfy-aimdo==0.3.0

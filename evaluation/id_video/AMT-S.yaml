@@ -1,0 +1,6 @@
+network:
+  name: networks.AMT-S.Model
+  params:
+    corr_radius: 3
+    corr_lvls: 4
+    num_flows: 3

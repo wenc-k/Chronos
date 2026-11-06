@@ -1,0 +1,14 @@
+scipy
+matplotlib
+Pillow==9.5.0
+PyYAML==6.0.2
+easydict==1.13
+imageio==2.34.2
+omegaconf==2.3.0
+open-clip-torch==2.0.2
+opencv-python==4.10.0.84
+torch==2.4.0
+torchvision==0.19.0
+transformers==4.44.2
+numpy<2
+clip @ git+https://github.com/openai/CLIP.git@a1d071733d7111c9c014f024669f959182114e33

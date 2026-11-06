@@ -6,16 +6,29 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0"></a>
 </p>
 
-> **Code coming soon.** We are preparing the code for release and will publish it in this repository. Star or watch the repository to be notified.
+Official code of **Chronos** (ACM Multimedia 2026), a training-free framework for identity-preserving video generation.
 
-This is the official repository of **Chronos** (ACM Multimedia 2026), a training-free framework for identity-preserving video generation. Chronos unifies single-segment facial identity preservation and multi-segment sequential action generation under a common temporal formulation, using Semantic Prompt Anchoring, Visual Frame Anchoring and Metric-Guided Candidate Routing. It achieved tied first place in Track 1 and first place in Track 2 of the ACM MM 2026 Identity-Preserving Video Generation Challenge.
+## Entry points
 
-- Paper: [arXiv:2611.05893](https://arxiv.org/abs/2611.05893)
-- Project page: [wenc-k.github.io/Chronos-page](https://wenc-k.github.io/Chronos-page/)
+Run from the repository root; every script supports `--help`.
+
+| Entry point | Function |
+| --- | --- |
+| `pre_data_engineering/prompt_aug_pipeline.py` | Semantic prompt anchoring: extracts a stable identity summary and rewrites prompts |
+| `pre_data_engineering/i2i/generate_i2v_first_frames_openai.py` | Visual frame anchoring: generates the first frame from the reference image |
+| `api_i2v/generate.py` | API-based image-to-video generation (Track 1) |
+| `api_i2v/build_result_json.py` | Builds the Track 1 evaluation manifest |
+| `inference/wan_i2v/run.py track1` | Wan2.2 I2V generation (Track 1) |
+| `inference/wan_i2v/run.py track2` | Wan2.2 I2V sequential multi-segment generation (Track 2) |
+| `inference/wan_i2v/generate_eval_json.py` | Builds the Track 2 evaluation manifest |
+| `inference/wan_flf2v/run.py` | Wan2.2 first/last-frame generation via ComfyUI (Track 2) |
+| `inference/wan_flf2v/merge_segments.py` | Merges segments into full videos |
+| `inference/environment/setup_environment.py` | Sets up the Wan / ComfyUI environments |
+| `evaluation/eval_opens2v/eval_stage1.py`, `eval_stage2.py` | Track 1 evaluation |
+| `evaluation/eval_opens2v/eval_track2.py` | Track 2 evaluation |
+| `evaluation/id_video/id_video_eval_system.py` | DINO / CLIP identity and temporal metrics |
 
 ## Citation
-
-If you find this work useful, please cite:
 
 ```bibtex
 @misc{huang2026chronossequentialidentitypreservingvideo,
@@ -31,4 +44,4 @@ If you find this work useful, please cite:
 
 ## License
 
-This project is released under the [Apache License 2.0](LICENSE).
+[Apache License 2.0](LICENSE). Bundled third-party code keeps its own license (see the `LICENSE` files in its directories).
